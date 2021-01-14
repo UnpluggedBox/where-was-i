@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239610548302",
+    "project_id": "where-was-i-1bced",
+    "storage_bucket": "where-was-i-1bced.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239610548302:android:89468368160dc7f166331f",
+        "android_client_info": {
+          "package_name": "com.UnpluggedBox.Where_Was_I"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239610548302-ic6dv0qcvd0cos64n1fi0ludd7gse7mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2C0vrIIhatkwqhJzx7ULMgfDJdhd66_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239610548302-ic6dv0qcvd0cos64n1fi0ludd7gse7mf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
