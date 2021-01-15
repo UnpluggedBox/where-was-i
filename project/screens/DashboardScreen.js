@@ -6,6 +6,8 @@ import {
     Button
 } from "react-native";
 import LocationScreen from './LocationScreen';
+import { withNavigation } from 'react-navigation';
+
 
 import firebase from 'firebase';
 
@@ -20,7 +22,7 @@ class DashboardScreen extends Component {
         );
     }
 }
-export default DashboardScreen;
+export default withNavigation(DashboardScreen);
 
 const styles = StyleSheet.create({
     container: {

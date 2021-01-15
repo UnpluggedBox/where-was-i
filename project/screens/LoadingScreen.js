@@ -4,6 +4,8 @@ import {
     Text,
     StyleSheet, ActivityIndicator   
 } from "react-native";
+import { withNavigation } from 'react-navigation';
+
 
 import firebase from 'firebase';
 
@@ -32,7 +34,7 @@ class LoadingScreen extends Component {
         );
     }
 }
-export default LoadingScreen;
+export default withNavigation(LoadingScreen);
 
 const styles = StyleSheet.create({
     container: {

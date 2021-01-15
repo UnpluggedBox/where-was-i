@@ -4,6 +4,7 @@ import {
     Text,
     StyleSheet, Button
 } from "react-native";
+import { withNavigation } from 'react-navigation';
 import firebase from 'firebase';
 import * as Google from 'expo-google-app-auth';
 
@@ -103,7 +104,7 @@ class LoginScreen extends Component {
         );
     }
 }
-export default LoginScreen;
+export default withNavigation(LoginScreen);
 
 const styles = StyleSheet.create({
     container: {

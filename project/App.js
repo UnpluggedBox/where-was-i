@@ -19,10 +19,10 @@ export default class App extends React.Component {
 }
 
 const AppSwitchNavigator = createSwitchNavigator({
-  LoadingScreen:LoadingScreen,
+  LoadingScreen:{ screen: LoadingScreen },
   LoginScreen:LoginScreen,
-  DashboardScreen:DashboardScreen,
-  LocationScreen:LocationScreen
+  DashboardScreen: { screen: DashboardScreen },
+  LocationScreen: { screen: LocationScreen }
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
