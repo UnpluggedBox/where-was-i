@@ -7,6 +7,7 @@ import LoadingScreen from './screens/LoadingScreen';
 import LocationScreen from './screens/LocationScreen';
 import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
+import TestScreen from './screens/TestScreen';
 
 import firebase from 'firebase';
 import { firebaseConfig } from './config';
@@ -22,7 +23,8 @@ const AppSwitchNavigator = createSwitchNavigator({
   LoadingScreen:{ screen: LoadingScreen },
   LoginScreen:LoginScreen,
   DashboardScreen: { screen: DashboardScreen },
-  LocationScreen: { screen: LocationScreen }
+  LocationScreen: { screen: LocationScreen },
+  TestScreen: { screen: TestScreen }
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

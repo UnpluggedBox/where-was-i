@@ -11,19 +11,18 @@ import { withNavigation } from 'react-navigation';
 
 import firebase from 'firebase';
 
-class DashboardScreen extends Component {
+class TestScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Dashboard Screen</Text>
-                <Button title="Go to Location" onPress={() => this.props.navigation.navigate('LocationScreen')} />
-                <Button title="Go to Test Screen" onPress={() => this.props.navigation.navigate('TestScreen')} />
-                <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
+                <Text>Hello, this is just a</Text>
+                <Text>Test Screen</Text>
+                <Button title="Go to Dashboard" onPress={() => this.props.navigation.navigate('DashboardScreen')} />
             </View>
         );
     }
 }
-export default withNavigation(DashboardScreen);
+export default withNavigation(TestScreen);
 
 const styles = StyleSheet.create({
     container: {
