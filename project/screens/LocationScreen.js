@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Dimensions, Button } from 'react-native';
+import { View, StyleSheet, } from 'react-native';
 import * as Location from 'expo-location';
 import firebase from 'firebase';
 import config from '../config';
 import MapView from 'react-native-maps';
 import { withNavigation } from 'react-navigation';
+import { AppLoading } from 'expo';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Card, CardItem } from 'native-base';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 
-function LocationScreen() {
+export default function LocationScreen() {
   if (firebase.apps.length === 0) {
     firebase.initializeApp(config);
   }else {
@@ -65,7 +69,24 @@ function LocationScreen() {
     // console.log(longitude);
     
     return (
-      <View style={styles.container}>
+      <Container>
+      <Header>
+  
+        <Body>
+          <Title>Where Was I - Location</Title>
+        </Body>
+  
+      </Header>
+      <Content>
+      <Card>
+          <CardItem>
+            <Body>
+              <Text>
+                 Thank you for allowing this app to track your location!
+              </Text>
+            </Body>
+          </CardItem>
+      </Card>
         <Text style={styles.instructions}>{text}</Text>
         <MapView style={styles.map}
                 region={{
@@ -78,24 +99,61 @@ function LocationScreen() {
         <MapView.Marker coordinate={{ latitude : latitude , longitude : longitude }} />
         </MapView>
         <Text style={styles.buttonText}>You are at: {addressLocationParseResult} </Text>
-        <Button style={styles.button} title="Go to Dashboard" onPress={() => this.props.navigation.navigate('DashboardScreen')} />
-      </View>
+        <Button iconLeft style={{alignSelf: "center", marginTop: 15}} onPress={() => {this.props.navigation.goBack();}}>
+            <Icon name='home' />
+            <Text>Go back to Dashboard</Text>
+        </Button>
+       
+      </Content>
+    </Container>
     );
   
    // storeLocationData(location);
   }
   return (
-    <View style={styles.container}>
+    <Container>
+    <Header>
+
+      <Body>
+        <Title>Where Was I - Location</Title>
+      </Body>
+
+    </Header>
+    <Content>
+    <Card>
+        <CardItem>
+          <Body>
+            <Text>
+               Hello, please allow location permission to use this app.
+            </Text>
+          </Body>
+        </CardItem>
+    </Card>
+
       <Text style={styles.instructions}>{text}</Text>
       <MapView style={styles.map}
           // region={}
           showsUserLocation={true}>
       </MapView>
-    </View>
+      <Button iconLeft style={{alignSelf: "center", marginTop: 15}} onPress={() => {LocationScreen();}}>
+            <Icon name='home' />
+            <Text>Find location</Text>
+        </Button>
+     
+    </Content>
+    <Footer>
+      <FooterTab>
+        <Button full>
+          <Text>Hello</Text>
+        </Button>
+      </FooterTab>
+    </Footer>
+  </Container>
+
   );
 }
 
-export default withNavigation(LocationScreen);
+// export default withNavigation(LocationScreen);
 
 function storeLocationData(user, location) {
   firebase
@@ -123,7 +181,8 @@ const styles = StyleSheet.create({
       color: '#8e29fb',
       fontSize: 18,
       marginHorizontal: 15,
-      marginBottom:5
+      marginBottom:5,
+      alignSelf: 'center'
     },
      button: {
        backgroundColor: 'turquoise',
@@ -132,8 +191,9 @@ const styles = StyleSheet.create({
       buttonText: {
         fontSize: 20,
         textAlign: 'center',
-        color: '#fff',
-        marginBottom:10
+        color: '#8e29fb',
+        marginBottom:10,
+        marginTop: 15
       },
       thumbnail: {
         width: 300,
@@ -144,6 +204,7 @@ const styles = StyleSheet.create({
         map: {
         width: 250,
         height: 250,
-        marginTop: 20
+        marginTop: 20,
+        alignSelf: 'center'
       },
 });
